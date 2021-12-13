@@ -4,7 +4,7 @@ import { Item } from './types/item';
 const App = () => {
 //aqui eu falo que vou ter um array de item e o typescritp aceita
 const [list, setList] = useState<Item[]>([
-  {id: 1, name: 'Comprar p�o na padaria', done: false},
+  {id: 1, name: 'Comprar pão na padaria', done: false},
   {id: 2, name: 'Comprar um bolo na padaria', done: false},
 ]);
 
@@ -13,6 +13,10 @@ const [list, setList] = useState<Item[]>([
     <C.Container>
       <C.Area>
         <C.Header>Lista de Tarefas</C.Header>
+        {/* Área de adicionar nova tarefa */}
+        {list.map((item, index)=>(
+          <div>{item.name}</div>
+        ))}
       </C.Area>
     </C.Container>
  
