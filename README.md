@@ -1,7 +1,7 @@
 # b7web-react-5d
 seleção de 5 projetos com react durante 5 dias
 
-Projeto 1 - TODO lIST
+Projeto 1 - TODO LIST
 
 ![projeto1-todo-reactjs](https://user-images.githubusercontent.com/5197047/136229996-463bd69d-f9f5-4b39-8921-bf027c5a5d0b.png)
 
