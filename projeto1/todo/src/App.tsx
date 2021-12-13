@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import * as C from './App.styles';
 import { Item } from './types/item';
+import { ListItem } from './components/ListItem';
+
+
 const App = () => {
 //aqui eu falo que vou ter um array de item e o typescritp aceita
 const [list, setList] = useState<Item[]>([
@@ -15,7 +18,7 @@ const [list, setList] = useState<Item[]>([
         <C.Header>Lista de Tarefas</C.Header>
         {/* Área de adicionar nova tarefa */}
         {list.map((item, index)=>(
-          <div>{item.name}</div>
+          <ListItem />
         ))}
       </C.Area>
     </C.Container>
