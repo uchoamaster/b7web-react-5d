@@ -1,5 +1,5 @@
 import * as C from './styles';
-import { FaPlus } from "react-icons/fa";
+import { FaPlayCircle } from "react-icons/fa";
 import { useState , KeyboardEvent } from 'react';
 
 
@@ -21,7 +21,7 @@ export const AddArea = ({ onEnter }: Props) => {
 
     return (
     <C.Container>
-        <div className="image"> <FaPlus /></div>
+        <div className="image"> <FaPlayCircle /></div>
         <input type="text"
         placeholder="Adicione uma tarefa"
         value={inputText}
