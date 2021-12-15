@@ -1,19 +1,27 @@
-import { useState  } from 'react';
+import { useState , useEffect } from 'react';
 import * as C from './App.styles';
 import { Item } from './types/Item';
 import { Category } from './types/Category';
 import { categories } from './data/categories';
 import { items } from './data/items';
-import { getCurrentMonth } from './helpers/dateFilter';
+import { getCurrentMonth , filterListByMonth } from './helpers/dateFilter';
 
 
 
 
 const App = () => {
-// lista completa dos anos
+// lista geral completa dos anos
   const [list, setList] = useState(items);
+  //lista filtrada para pegar do mês atual
+  const [filteredList, setFilteredList] = useState<Item[]>([]);
   //tenho meu mês atual
   const [currentMonth, setCurrentMonth] = useState(getCurrentMonth());
+
+  //para eu monitorar modificações na aplicação eu uso useEffect
+  //entao se a lista geral mudar ou o mês automaticamente eu consigo filtrar com o useEffect
+  useEffect(()=>{
+    setFilteredList( filterListByMonth( list, currentMonth) );
+  }, [list, currentMonth])
 
   return(
       <C.Container> 
