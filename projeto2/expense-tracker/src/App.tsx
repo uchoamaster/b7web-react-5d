@@ -5,20 +5,20 @@ import { Category } from './types/Category';
 import { categories } from './data/categories';
 import { items } from './data/items';
 import { getCurrentMonth , filterListByMonth } from './helpers/dateFilter';
-
+import { TableArea } from './components/TableArea';
 
 
 
 const App = () => {
 // lista geral completa dos anos
   const [list, setList] = useState(items);
-  //lista filtrada para pegar do mês atual
+  //lista filtrada para pegar do mï¿½s atual
   const [filteredList, setFilteredList] = useState<Item[]>([]);
-  //tenho meu mês atual
+  //tenho meu mï¿½s atual
   const [currentMonth, setCurrentMonth] = useState(getCurrentMonth());
 
-  //para eu monitorar modificações na aplicação eu uso useEffect
-  //entao se a lista geral mudar ou o mês automaticamente eu consigo filtrar com o useEffect
+  //para eu monitorar modificaï¿½ï¿½es na aplicaï¿½ï¿½o eu uso useEffect
+  //entao se a lista geral mudar ou o mï¿½s automaticamente eu consigo filtrar com o useEffect
   useEffect(()=>{
     setFilteredList( filterListByMonth( list, currentMonth) );
   }, [list, currentMonth])
@@ -29,11 +29,12 @@ const App = () => {
           <C.HeaderText>Sistema Financeiro</C.HeaderText>
         </C.Header>
         <C.Body>
-          {/* Área de informações */}
+          {/* ï¿½rea de informaï¿½ï¿½es */}
 
-          {/* Área de inserção */}
+          {/* ï¿½rea de inserï¿½ï¿½o */}
 
           {/* Tabela de itens */}
+          <TableArea />
           
         </C.Body>
       </C.Container>
