@@ -12,16 +12,16 @@ import { TableArea } from './components/TableArea';
 const App = () => {
 // lista geral completa dos anos
   const [list, setList] = useState(items);
-  //lista filtrada para pegar do m�s atual
+  //lista filtrada para pegar do mes atual
   const [filteredList, setFilteredList] = useState<Item[]>([]);
-  //tenho meu m�s atual
+  //tenho meu mes atual
   const [currentMonth, setCurrentMonth] = useState(getCurrentMonth());
 
-  //para eu monitorar modifica��es na aplica��o eu uso useEffect
-  //entao se a lista geral mudar ou o m�s automaticamente eu consigo filtrar com o useEffect
+  //para eu monitorar modificacoes na aplicacao eu uso useEffect
+  //entao se a lista geral mudar ou o mes automaticamente eu consigo filtrar com o useEffect
   useEffect(()=>{
     setFilteredList( filterListByMonth( list, currentMonth) );
-  }, [list, currentMonth])
+  }, [list, currentMonth]);
 
   return(
       <C.Container> 
@@ -29,12 +29,12 @@ const App = () => {
           <C.HeaderText>Sistema Financeiro</C.HeaderText>
         </C.Header>
         <C.Body>
-          {/* �rea de informa��es */}
+          {/* Area de informacoes */}
 
-          {/* �rea de inser��o */}
+          {/* Area de insercao */}
 
           {/* Tabela de itens */}
-          <TableArea />
+          <TableArea list={filteredList} />
           
         </C.Body>
       </C.Container>
